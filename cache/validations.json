@@ -1,0 +1,1136 @@
+{
+  "version": "3.4",
+  "log": [
+    {
+      "contracts/Damazon.sol:Damazon": {
+        "src": "contracts/Damazon.sol:18",
+        "version": {
+          "withMetadata": "13bca781e636f417eddc48f8df7eb706ab5a4a8f8fdaad43e58e14f78a443bff",
+          "withoutMetadata": "8cd08f69d8d96e5e2e6b678335420d9ef23309207d3b5b2dc65b6264bd43e2f4",
+          "linkedWithoutMetadata": "8cd08f69d8d96e5e2e6b678335420d9ef23309207d3b5b2dc65b6264bd43e2f4"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(string)",
+          "List(uint256,string,string,string,uint256,uint256,uint256)",
+          "Buy(uint256)",
+          "withdraw()",
+          "getName()",
+          "getOwner()",
+          "getItem(uint256)",
+          "getOrderCount(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Damazon",
+            "src": "contracts/Damazon.sol:44"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "s_name",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_string_storage",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:19"
+            },
+            {
+              "label": "s_owner",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_address",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:20"
+            },
+            {
+              "label": "items",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_mapping(t_uint256,t_struct(Item)44_storage)",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:22"
+            },
+            {
+              "label": "orderCount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:23"
+            },
+            {
+              "label": "orders",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Order)50_storage))",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:24"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(Order)50_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct Damazon.Order))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_struct(Item)44_storage)": {
+              "label": "mapping(uint256 => struct Damazon.Item)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_struct(Order)50_storage)": {
+              "label": "mapping(uint256 => struct Damazon.Order)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Item)44_storage": {
+              "label": "struct Damazon.Item",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "name",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "category",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "image",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "cost",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "rating",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "stock",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "6"
+                }
+              ],
+              "numberOfBytes": "224"
+            },
+            "t_struct(Order)50_storage": {
+              "label": "struct Damazon.Order",
+              "members": [
+                {
+                  "label": "time",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "item",
+                  "type": "t_struct(Item)44_storage",
+                  "offset": 0,
+                  "slot": "1"
+                }
+              ],
+              "numberOfBytes": "256"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.7"
+      }
+    },
+    {
+      "contracts/Damazon.sol:Damazon": {
+        "src": "contracts/Damazon.sol:18",
+        "version": {
+          "withMetadata": "ebc357205404a71b29b68c9394d1ffaf2a084259681142b3fd9e3959df9f863a",
+          "withoutMetadata": "8cd08f69d8d96e5e2e6b678335420d9ef23309207d3b5b2dc65b6264bd43e2f4",
+          "linkedWithoutMetadata": "8cd08f69d8d96e5e2e6b678335420d9ef23309207d3b5b2dc65b6264bd43e2f4"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(string)",
+          "List(uint256,string,string,string,uint256,uint256,uint256)",
+          "Buy(uint256)",
+          "withdraw()",
+          "getName()",
+          "getOwner()",
+          "getItem(uint256)",
+          "getOrderCount(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Damazon",
+            "src": "contracts/Damazon.sol:44"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "s_name",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_string_storage",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:19"
+            },
+            {
+              "label": "s_owner",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_address",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:20"
+            },
+            {
+              "label": "items",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_mapping(t_uint256,t_struct(Item)44_storage)",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:22"
+            },
+            {
+              "label": "orderCount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:23"
+            },
+            {
+              "label": "orders",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Order)50_storage))",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:24"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(Order)50_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct Damazon.Order))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_struct(Item)44_storage)": {
+              "label": "mapping(uint256 => struct Damazon.Item)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_struct(Order)50_storage)": {
+              "label": "mapping(uint256 => struct Damazon.Order)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Item)44_storage": {
+              "label": "struct Damazon.Item",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "name",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "category",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "image",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "cost",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "rating",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "stock",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "6"
+                }
+              ],
+              "numberOfBytes": "224"
+            },
+            "t_struct(Order)50_storage": {
+              "label": "struct Damazon.Order",
+              "members": [
+                {
+                  "label": "time",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "item",
+                  "type": "t_struct(Item)44_storage",
+                  "offset": 0,
+                  "slot": "1"
+                }
+              ],
+              "numberOfBytes": "256"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.7"
+      }
+    },
+    {
+      "contracts/Damazon.sol:Damazon": {
+        "src": "contracts/Damazon.sol:18",
+        "version": {
+          "withMetadata": "0e9404c4a5dd26fff162f1d1e26c98ed40d1403c0143e80e85115910a935e346",
+          "withoutMetadata": "8cd08f69d8d96e5e2e6b678335420d9ef23309207d3b5b2dc65b6264bd43e2f4",
+          "linkedWithoutMetadata": "8cd08f69d8d96e5e2e6b678335420d9ef23309207d3b5b2dc65b6264bd43e2f4"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(string)",
+          "List(uint256,string,string,string,uint256,uint256,uint256)",
+          "Buy(uint256)",
+          "withdraw()",
+          "getName()",
+          "getOwner()",
+          "getItem(uint256)",
+          "getOrderCount(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Damazon",
+            "src": "contracts/Damazon.sol:44"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "s_name",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_string_storage",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:19"
+            },
+            {
+              "label": "s_owner",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_address",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:20"
+            },
+            {
+              "label": "items",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_mapping(t_uint256,t_struct(Item)44_storage)",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:22"
+            },
+            {
+              "label": "orderCount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_uint256)",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:23"
+            },
+            {
+              "label": "orders",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_struct(Order)50_storage))",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:24"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_address,t_mapping(t_uint256,t_struct(Order)50_storage))": {
+              "label": "mapping(address => mapping(uint256 => struct Damazon.Order))",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_struct(Item)44_storage)": {
+              "label": "mapping(uint256 => struct Damazon.Item)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_struct(Order)50_storage)": {
+              "label": "mapping(uint256 => struct Damazon.Order)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Item)44_storage": {
+              "label": "struct Damazon.Item",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "name",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "category",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "image",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "cost",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "rating",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "stock",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "6"
+                }
+              ],
+              "numberOfBytes": "224"
+            },
+            "t_struct(Order)50_storage": {
+              "label": "struct Damazon.Order",
+              "members": [
+                {
+                  "label": "time",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "item",
+                  "type": "t_struct(Item)44_storage",
+                  "offset": 0,
+                  "slot": "1"
+                }
+              ],
+              "numberOfBytes": "256"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.7"
+      }
+    },
+    {
+      "contracts/Damazon.sol:Damazon": {
+        "src": "contracts/Damazon.sol:15",
+        "version": {
+          "withMetadata": "dcda6dcc94fbf3f8250acf6596ee65836a196cc4b301f2f98772c7c6adb9bef9",
+          "withoutMetadata": "fd0c5749f506e05bd642bb4c58802db59174ccc06c0e750c99dc8f5047506e43",
+          "linkedWithoutMetadata": "fd0c5749f506e05bd642bb4c58802db59174ccc06c0e750c99dc8f5047506e43"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(string)",
+          "List(uint256,string,string,string,uint256,uint256,uint256)",
+          "getName()",
+          "getOwner()",
+          "getItem(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Damazon",
+            "src": "contracts/Damazon.sol:33"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "s_name",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_string_storage",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:16"
+            },
+            {
+              "label": "s_owner",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_address",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:17"
+            },
+            {
+              "label": "items",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_mapping(t_uint256,t_struct(Item)27_storage)",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:19"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_uint256,t_struct(Item)27_storage)": {
+              "label": "mapping(uint256 => struct Damazon.Item)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Item)27_storage": {
+              "label": "struct Damazon.Item",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "name",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "category",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "image",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "cost",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "rating",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "stock",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "6"
+                }
+              ],
+              "numberOfBytes": "224"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.7"
+      }
+    },
+    {
+      "contracts/Damazon.sol:Damazon": {
+        "src": "contracts/Damazon.sol:13",
+        "version": {
+          "withMetadata": "d8d62da6537c3198a414fed1e891ece87791cd3b69a326570e745e8349cd755e",
+          "withoutMetadata": "2cd4fc605fab1b7a727d1efbdb7d50cabe63e0ed4b0f219a1a5c2506144c514b",
+          "linkedWithoutMetadata": "2cd4fc605fab1b7a727d1efbdb7d50cabe63e0ed4b0f219a1a5c2506144c514b"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(string)",
+          "List(uint256,string,string,string,uint256,uint256,uint256)",
+          "getName()",
+          "getOwner()",
+          "getItem(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Damazon",
+            "src": "contracts/Damazon.sol:31"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "s_name",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_string_storage",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:14"
+            },
+            {
+              "label": "s_owner",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_address",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:15"
+            },
+            {
+              "label": "items",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_mapping(t_uint256,t_struct(Item)25_storage)",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:17"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_uint256,t_struct(Item)25_storage)": {
+              "label": "mapping(uint256 => struct Damazon.Item)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Item)25_storage": {
+              "label": "struct Damazon.Item",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "name",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "category",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "image",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "cost",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "rating",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "stock",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "6"
+                }
+              ],
+              "numberOfBytes": "224"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.7"
+      }
+    },
+    {
+      "contracts/Damazon.sol:Damazon": {
+        "src": "contracts/Damazon.sol:13",
+        "version": {
+          "withMetadata": "47c1624ed9ecdedc995d4c327bf4b57f21acf3ad8dc27bd4bdd80543ee069fea",
+          "withoutMetadata": "275e5264a853063d36a920f91183f91493f90bab6553b087527afd53911a9506",
+          "linkedWithoutMetadata": "275e5264a853063d36a920f91183f91493f90bab6553b087527afd53911a9506"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(string)",
+          "List(uint256,string,string,string,uint256,uint256,uint256)",
+          "getName()",
+          "getOwner()",
+          "getItem(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Damazon",
+            "src": "contracts/Damazon.sol:31"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "s_name",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_string_storage",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:14"
+            },
+            {
+              "label": "s_owner",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_address",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:15"
+            },
+            {
+              "label": "items",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_mapping(t_uint256,t_struct(Item)25_storage)",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:17"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_mapping(t_uint256,t_struct(Item)25_storage)": {
+              "label": "mapping(uint256 => struct Damazon.Item)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Item)25_storage": {
+              "label": "struct Damazon.Item",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "name",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "category",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "image",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "cost",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "rating",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "stock",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "6"
+                }
+              ],
+              "numberOfBytes": "224"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.7"
+      }
+    },
+    {
+      "contracts/Damazon.sol:Damazon": {
+        "src": "contracts/Damazon.sol:13",
+        "version": {
+          "withMetadata": "0fc8fc8c129a53027e505cb94b51cf54c5e27c54e9fd39a6c7ceb510eea18c9d",
+          "withoutMetadata": "998970c7f42a71715dc147054e6b6ce01c9ef4cd55cf841b0ac79373b3364fa9",
+          "linkedWithoutMetadata": "998970c7f42a71715dc147054e6b6ce01c9ef4cd55cf841b0ac79373b3364fa9"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(string)",
+          "List(uint256,string,string,string,uint256,uint256,uint256)",
+          "getName()",
+          "getOwner()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Damazon",
+            "src": "contracts/Damazon.sol:27"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "s_name",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_string_storage",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:14"
+            },
+            {
+              "label": "s_owner",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_address",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:15"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.7"
+      }
+    },
+    {
+      "contracts/Damazon.sol:Damazon": {
+        "src": "contracts/Damazon.sol:4",
+        "version": {
+          "withMetadata": "423996c5c866341a4f23c4675106e196d16847f104efbefc752d8d94095e8c2c",
+          "withoutMetadata": "ce589632cc51c6f9fa511ebe05ac159008fd0bc66f966e1b5e03c77704ceb1d8",
+          "linkedWithoutMetadata": "ce589632cc51c6f9fa511ebe05ac159008fd0bc66f966e1b5e03c77704ceb1d8"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(string)",
+          "getName()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Damazon",
+            "src": "contracts/Damazon.sol:8"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "s_name",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_string_storage",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:5"
+            },
+            {
+              "label": "s_owner",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_address",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:6"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.7"
+      }
+    },
+    {
+      "@openzeppelin/contracts/access/Ownable.sol:Ownable": {
+        "src": "@openzeppelin/contracts/access/Ownable.sol:20",
+        "inherit": [
+          "@openzeppelin/contracts/utils/Context.sol:Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "owner()",
+          "renounceOwnership()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Ownable",
+            "src": "@openzeppelin/contracts/access/Ownable.sol:28"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin/contracts/access/Ownable.sol:21"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.7"
+      },
+      "@openzeppelin/contracts/utils/Context.sol:Context": {
+        "src": "@openzeppelin/contracts/utils/Context.sol:16",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.7"
+      },
+      "contracts/Damazon.sol:Damazon": {
+        "src": "contracts/Damazon.sol:6",
+        "version": {
+          "withMetadata": "7ff599214f69a1aae2db7da447d1d04d266acdbc47cc1e9304c3ef7544d1d8b7",
+          "withoutMetadata": "a1fb726953a64a2a609fe15fe9f4319c0fe1717dda784b1248e4effc43580a01",
+          "linkedWithoutMetadata": "a1fb726953a64a2a609fe15fe9f4319c0fe1717dda784b1248e4effc43580a01"
+        },
+        "inherit": [
+          "@openzeppelin/contracts/access/Ownable.sol:Ownable",
+          "@openzeppelin/contracts/utils/Context.sol:Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "(string)",
+          "getName()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Damazon",
+            "src": "contracts/Damazon.sol:10"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin/contracts/access/Ownable.sol:21"
+            },
+            {
+              "label": "s_name",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_string_storage",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:7"
+            },
+            {
+              "label": "s_owner",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_address",
+              "contract": "Damazon",
+              "src": "contracts/Damazon.sol:8"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.7"
+      }
+    }
+  ]
+}
