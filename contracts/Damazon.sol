@@ -72,24 +72,25 @@ contract Damazon {
     function Buy(uint256 _id) public payable {
         Item memory item = items[_id];
 
-        if (msg.value < item.cost) {
-            revert Damazon__NotEnoughEthSent();
-        }    
-
         if (item.stock == 0) {
             revert Damazon__OutOfStock();
         }
 
+        if (msg.value < item.cost) {
+            revert Damazon__NotEnoughEthSent();
+        }    
 
         Order memory order = Order(block.timestamp, item);
 
         unchecked {
-            orderCount[msg.sender]++;
+            ++orderCount[msg.sender];
         }
 
         orders[msg.sender][orderCount[msg.sender]] = order;
 
-        items[_id].stock = item.stock - 1;
+        unchecked {
+            items[_id].stock = item.stock - 1;
+        }
 
         emit Buy_Item(msg.sender, orderCount[msg.sender], item.id);
     }

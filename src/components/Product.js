@@ -20,7 +20,7 @@ const Product = ({ item, provider, account, damazon, togglePop }) => {
 
     if (orders.length === 0) return;
 
-    const order = await damazon.orders(account, orders[0].args.orderId);
+    order = await damazon.orders(account, orders[0].args.orderId);
     setOrder(order);
   };
 
@@ -74,7 +74,7 @@ const Product = ({ item, provider, account, damazon, togglePop }) => {
           <h1>{ethers.formatUnits(item.cost.toString(), "ether")} ETH</h1>
 
           <p>
-            FREE delivery <br />
+            FREE delivery by<br />
             <strong>
               {new Date(Date.now() + 345600000).toLocaleDateString(undefined, {
                 weekday: "long",

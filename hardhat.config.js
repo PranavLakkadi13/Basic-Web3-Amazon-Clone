@@ -1,5 +1,5 @@
-require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-etherscan");
+require("@nomicfoundation/hardhat-chai-matchers");
 require("hardhat-deploy");
 require("@nomiclabs/hardhat-ethers");
 require("solidity-coverage");
@@ -66,7 +66,7 @@ module.exports = {
     // outputFile: "gas-reporter.txt",
     noColors: true,
     currency: "USD",
-    // coinmarketcap: Coinmarketcap_API_KEY,
+    coinmarketcap: Coinmarketcap_API_KEY,
     token: "ETH",
   },
   mocha: {
