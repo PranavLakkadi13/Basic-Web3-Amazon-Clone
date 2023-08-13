@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/Damazon.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.7;\n\n/*\nflow of the contract: \nList products\nBuy products \nwithdraw funds \n\nwe have an owner because it is being hosted like a personal website\n*/\n\nerror Damazon__NotOwner();\nerror Damazon__NotEnoughEthSent();\nerror Damazon__OutOfStock();\nerror Damazon__TransactionFailed();\n\ncontract Damazon {\n    string private i_name;\n    address private immutable i_owner;\n\n    mapping(uint256 => Item) public items;\n    mapping(address => uint256) public orderCount;\n    mapping(address => mapping(uint256 => Order)) public orders;\n\n    struct Item {\n        uint256 id;\n        string name;\n        string category;\n        string image;\n        uint256 cost;\n        uint256 rating;\n        uint256 stock;\n    }\n\n    struct Order {\n        uint256 time;\n        Item item;\n    }\n\n    event Item_Listed(string indexed _name, uint256 indexed _cost, uint256 indexed _quantity);\n    event Buy_Item(address indexed _buyer, uint256 indexed _orderCount, uint256 indexed _itemId);\n\n    constructor(string memory name){\n        i_name = name;\n        i_owner = msg.sender;\n    }\n\n    modifier OnlyOwner() {\n        if (msg.sender != i_owner) {\n            revert Damazon__NotOwner();\n        }\n        _;\n    }\n\n    function List(\n        uint256 _id, \n        string memory _name, \n        string memory _category,\n        string memory _image,\n        uint256 _cost,\n        uint256 _rating,\n        uint256 _stock\n    ) public OnlyOwner {\n        Item memory item = Item(_id,_name,_category,_image,_cost,_rating,_stock);\n        \n        items[_id] = item;\n        \n        emit Item_Listed(_name, _cost, _stock);\n    }\n\n    function Buy(uint256 _id) public payable {\n        Item memory item = items[_id];\n\n        if (item.stock == 0) {\n            revert Damazon__OutOfStock();\n        }\n\n        if (msg.value < item.cost) {\n            revert Damazon__NotEnoughEthSent();\n        }    \n\n        Order memory order = Order(block.timestamp, item);\n\n        unchecked {\n            ++orderCount[msg.sender];\n        }\n\n        orders[msg.sender][orderCount[msg.sender]] = order;\n\n        unchecked {\n            items[_id].stock = item.stock - 1;\n        }\n\n        emit Buy_Item(msg.sender, orderCount[msg.sender], item.id);\n    }\n\n    function withdraw() external OnlyOwner {\n        (bool success, ) = i_owner.call{value: address(this).balance}(\"\");\n        if (!success) {\n            revert Damazon__TransactionFailed();\n        }\n    }\n\n    function getName() public view returns(string memory) {\n        return i_name;\n    }\n\n    function getOwner() public view returns(address) {\n        return i_owner;\n    }\n\n}"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

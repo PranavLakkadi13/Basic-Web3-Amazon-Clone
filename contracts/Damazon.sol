@@ -8,16 +8,20 @@ Buy products
 withdraw funds 
 
 we have an owner because it is being hosted like a personal website
+
+The Item Id start from 1
 */
 
 error Damazon__NotOwner();
 error Damazon__NotEnoughEthSent();
 error Damazon__OutOfStock();
 error Damazon__TransactionFailed();
+error Damazon__InvalidItemId();
 
 contract Damazon {
     string private i_name;
     address private immutable i_owner;
+    uint256 internal itemCount;
 
     mapping(uint256 => Item) public items;
     mapping(address => uint256) public orderCount;
@@ -44,6 +48,7 @@ contract Damazon {
     constructor(string memory name){
         i_name = name;
         i_owner = msg.sender;
+        itemCount = 0;
     }
 
     modifier OnlyOwner() {
@@ -65,11 +70,24 @@ contract Damazon {
         Item memory item = Item(_id,_name,_category,_image,_cost,_rating,_stock);
         
         items[_id] = item;
+
+        unchecked {
+            ++itemCount;
+        }
         
         emit Item_Listed(_name, _cost, _stock);
     }
 
     function Buy(uint256 _id) public payable {
+        if (_id == 0) {
+            revert Damazon__InvalidItemId();
+        }
+        
+        if (
+            _id >= itemCount) {
+            revert Damazon__InvalidItemId();
+        }
+
         Item memory item = items[_id];
 
         if (item.stock == 0) {
@@ -80,6 +98,10 @@ contract Damazon {
             revert Damazon__NotEnoughEthSent();
         }    
 
+        unchecked {
+            items[_id].stock = item.stock - 1;
+        }
+
         Order memory order = Order(block.timestamp, item);
 
         unchecked {
@@ -88,14 +110,10 @@ contract Damazon {
 
         orders[msg.sender][orderCount[msg.sender]] = order;
 
-        unchecked {
-            items[_id].stock = item.stock - 1;
-        }
-
         emit Buy_Item(msg.sender, orderCount[msg.sender], item.id);
     }
 
-    function withdraw() external OnlyOwner {
+    function withdraw() external {
         (bool success, ) = i_owner.call{value: address(this).balance}("");
         if (!success) {
             revert Damazon__TransactionFailed();

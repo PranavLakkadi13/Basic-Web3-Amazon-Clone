@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/Users/pranavlakkadi/HH-FCC/amazon-clone/contracts/Damazon.sol": {
-      "lastModificationDate": 1691913594940,
-      "contentHash": "6b88341350c8b761a99903a456548b8e",
+      "lastModificationDate": 1691924162936,
+      "contentHash": "125462a208ac0bbf5b69355446b77982",
       "sourceName": "contracts/Damazon.sol",
       "solcConfig": {
         "version": "0.8.7",
