@@ -98,9 +98,7 @@ contract Damazon {
             revert Damazon__NotEnoughEthSent();
         }    
 
-        unchecked {
             items[_id].stock = item.stock - 1;
-        }
 
         Order memory order = Order(block.timestamp, item);
 
