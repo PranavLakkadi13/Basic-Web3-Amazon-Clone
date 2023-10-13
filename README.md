@@ -12,7 +12,12 @@ yarn hardhat deploy
 yarn hardhat deploy --network sepolia 
 ```
 
-Make sure you configure the metamask to hardhat node tobuy the NFTs 
+Make sure you configure the metamask to hardhat node to buy the NFTs 
+
+To run the node use the following command:
+```shell
+yarn hardhat node
+``
 
 for the frontend first run 
 ```shell
